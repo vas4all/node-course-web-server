@@ -1,6 +1,7 @@
 var express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
+const port = process.env.PORT || 3000;
 // Createing the express app. In call to create the app we  need to call the express() method
 var app = express();
 hbs.registerPartials(__dirname + "/views/partials");
@@ -58,6 +59,6 @@ app.get('/bad',(req,res) =>{
   })
 })
 // binds the application to the port on the machine
-app.listen(3000, ()=>{
-  console.log("Server is started")
+app.listen(port, ()=>{
+  console.log("Server is started on port:"+port)
 })
